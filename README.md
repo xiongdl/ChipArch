@@ -2,12 +2,16 @@
 Awesome Materials on Topic "Computer Architecture for AI".
 
 # Book
+- 2024 Springer - Towards Heterogeneous Multi-core Systems-on-Chip for Edge Machine Learning.
+  - website: https://drive.google.com/file/d/1erxYYDDZk4vAGDIqe1unNvaAXiFi5r6L/view
+- 2024 - Machine Learning System with TinyML. (Harvard University, CS249r)
+  - website: https://harvard-edge.github.io/cs249r_book/Machine-Learning-Systems.pdf
 - 2020 SLCA - Efficient Processing of Deep Neural Networks.
 - 2020 SLCA - Data Orchestration in Deep Learning Accelerators.
 
 # Course
-- 2021 Spring - Hardware for Machine Learning. (Berkeley EE290-2)
-  - website: https://inst.eecs.berkeley.edu/~ee290-2/sp21/
+- 2024 Spring - Hardware for Machine Learning. (Berkeley EE290-2)
+  - website: https://inst.eecs.berkeley.edu/~ee290-2/sp24/
 
 # Tutorial
 - 2019 ISCA - Hardware Architectures for Deep Neural Networks. (MIT, NVIDIA)
