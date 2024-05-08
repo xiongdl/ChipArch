@@ -1,6 +1,9 @@
 # CA4AI
 Awesome Materials on Topic "Computer Architecture for AI".
 
+# Insight
+- 2024 ISSCC - Computing in the Era of Generative AI. (NVIDIA)
+
 # Book
 - 2024 Springer - Towards Heterogeneous Multi-core Systems-on-Chip for Edge Machine Learning.
   - website: https://drive.google.com/file/d/1erxYYDDZk4vAGDIqe1unNvaAXiFi5r6L/view
@@ -30,6 +33,15 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - Neural Network Accelerator Comparison from NICS EFC Lab of Tsinghua University.
   - website: https://nicsefc.ee.tsinghua.edu.cn/projects/neural-network-accelerator/
 
+# Paper Reading
+- The review questions guide you through the paper reading process. (cite from EE290-2 slides)
+  - What are the **motivations** for this work?
+  - What is the **proposed solution**?
+  - What is the work's **evaluation** of the proposed solution?
+  - What is your **analysis** of the identified problem, idea and evaluation?
+  - What are **future directions** for this research?
+  - What **questions** are you left with?
+  
 # Hardware
 ## Conference
 
