@@ -1,5 +1,5 @@
 # CA4AI
-Awesome Materials on Topic "Computer Architecture for AI".
+Awesome Materials on Topic "Computer Architecture for AI". 
 
 # Book
 - 2024 Springer - Towards Heterogeneous Multi-core Systems-on-Chip for Edge Machine Learning.
@@ -57,11 +57,18 @@ Awesome Materials on Topic "Computer Architecture for AI".
 # Conference
 ### 2024 ISSCC
 - AMD Instinct MI300 Series Modular Chiplet Package - HPC and AI Accelerator for Exa-Class Systems.(AMD)
-  - Direction: Hardware-Chip
+  - Direction: Hardware (Industrial Product) for High Performance
   - Keywords: Chiplet, Advanced Packing
-  - Contributions:
+  - Takeaways:
     - Two new chiplet types are introduced in MI300, the input/output die (IOD) and the accelerator complex die (XCD).
     - MI300 is not just the first AMD multiple die hybrid bonded architecture but also the first AMD hybrid bonded 3D+2.5D Architecture.
+- IBM NorthPole: An Architecture for Neural Network Inference with a 12nm Chip. (IBM)
+  - Direction: Hardware (Industrial Product) for Low Latency
+  - Keywords: Mix-Precision
+  - Takeaways:
+    - The NorthPole Inferece Chip comprises a 256-Core Array with 192MB of distributed SRAM, a Frame Buffer memory with 32MB of SRAM, and an I/O interface. At nominal 400MHz frequency, cores deliver a cumulative peak compute performance of over 200 TOPS at 8b-, 400 TOPS at 4b-, and 800 TOPS at 2b-precision with high utilization.
+    - NorthPole supports layer-specific precision selection, so some layers can be 8b, while others are 4b and/or 2b.
+    - All communication, computation, control and memory access operations are fully deterministic and stall-free, timing is scheduled by the compiler.
 
 # Transaction
 
