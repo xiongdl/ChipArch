@@ -1,24 +1,29 @@
 # CA4AI
 Awesome Materials on Topic "Computer Architecture for AI".
 
-# Insight
-- 2024 ISSCC - Computing in the Era of Generative AI. (NVIDIA)
-
 # Book
 - 2024 Springer - Towards Heterogeneous Multi-core Systems-on-Chip for Edge Machine Learning.
-  - website: https://drive.google.com/file/d/1erxYYDDZk4vAGDIqe1unNvaAXiFi5r6L/view
+  - Website: https://drive.google.com/file/d/1erxYYDDZk4vAGDIqe1unNvaAXiFi5r6L/view
 - 2024 - Machine Learning System with TinyML. (Harvard University, CS249r)
-  - website: https://harvard-edge.github.io/cs249r_book/Machine-Learning-Systems.pdf
+  - Website: https://harvard-edge.github.io/cs249r_book/Machine-Learning-Systems.pdf
 - 2020 SLCA - Efficient Processing of Deep Neural Networks.
 - 2020 SLCA - Data Orchestration in Deep Learning Accelerators.
 
 # Course
 - 2024 Spring - Hardware for Machine Learning. (Berkeley EE290-2)
-  - website: https://inst.eecs.berkeley.edu/~ee290-2/sp24/
+  - Website: https://inst.eecs.berkeley.edu/~ee290-2/sp24/
 
 # Tutorial
 - 2019 ISCA - Hardware Architectures for Deep Neural Networks. (MIT, NVIDIA)
-  - website: http://eyeriss.mit.edu/tutorial.html
+  - Website: http://eyeriss.mit.edu/tutorial.html
+
+# Insight
+- 2024 ISSCC - Computing in the Era of Generative AI. (NVIDIA)
+  - Takeaways:
+    - Being an early adopter is hard and uncomfortable but I encourge you to believe it can pay off.
+    - The most important lesson is not expect immediate miracles. You have to be persistent, especially if you're trying a new era.
+    - Instead, believe that AI will fundamentally transform the semiconductor industry and your business.
+  
 
 # Survey
 - Commercial AI Accelerators Survey from MIT Lincoln Laboratory Supercomputing Center.
@@ -31,7 +36,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - 2020 JPROC - Model Compression and Hardware Acceleration for Neural Networks: A Comprehensive Survey. (Tsinghua University)
 - 2017 JPROC - Efficient Processing of Deep Neural Networks: A Tutorial and Survey. (MIT)
 - Neural Network Accelerator Comparison from NICS EFC Lab of Tsinghua University.
-  - website: https://nicsefc.ee.tsinghua.edu.cn/projects/neural-network-accelerator/
+  - Website: https://nicsefc.ee.tsinghua.edu.cn/projects/neural-network-accelerator/
 
 # Paper Reading
 - The review questions guide you through the paper reading process. (cite from EE290-2 slides)
@@ -42,17 +47,14 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - What are **future directions** for this research?
   - What **questions** are you left with?
   
-# Hardware
-## Conference
+# Conference
+### 2024 ISSCC
+- AMD Instinct MI300 Series Modular Chiplet Package - HPC and AI Accelerator for Exa-Class Systems.(AMD)
+  - Direction: Hardware-Chip
+  - Keywords: Chiplet, Advanced Packing
+  - Contributions:
+    - Two new chiplet types are introduced in MI300, the input/output die (IOD) and the accelerator complex die (XCD).
+    - MI300 is not just the first AMD multiple die hybrid bonded architecture but also the first AMD hybrid bonded 3D+2.5D Architecture.
 
-## Transaction
+# Transaction
 
-# Algorithm
-## Conference
-
-## Transaction
-
-# Compiler
-## Conference
-
-## Transaction
