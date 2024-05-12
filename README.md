@@ -18,6 +18,11 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - Website: http://eyeriss.mit.edu/tutorial.html
 
 # Insight
+- 2024 ISSCC - Semiconductor Industry: Present & Future. (TSMC)
+  - Takeaways:
+    - Continued advanced technology scaling: new device architecture (CFET), low dimensional channel materials.
+    - Essential design-technology co-optimization (DTCO): extract maximum values by tailoring technology definition (standard logic cell, SRAM, etc).
+    - Essential system-technology co-optimization (STCO): logic integration (2.5D + 3D integration), memory bandwidth (memory + logic), specially for power delivery (voltage regulator integration), specially for interconnect speed (OE on substrate).
 - 2024 ISSCC - Computing in the Era of Generative AI. (NVIDIA)
   - Takeaways:
     - Being an early adopter is hard and uncomfortable but I encourge you to believe it can pay off.
@@ -37,6 +42,8 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - 2017 JPROC - Efficient Processing of Deep Neural Networks: A Tutorial and Survey. (MIT)
 - Neural Network Accelerator Comparison from NICS EFC Lab of Tsinghua University.
   - Website: https://nicsefc.ee.tsinghua.edu.cn/projects/neural-network-accelerator/
+- Computation Used to Train Notable Artificial Intelligence Systems
+  - Website: https://ourworldindata.org/grapher/artificial-intelligence-training-computation 
 
 # Paper Reading
 - The review questions guide you through the paper reading process. (cite from EE290-2 slides)
