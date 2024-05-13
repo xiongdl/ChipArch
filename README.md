@@ -90,6 +90,17 @@ Awesome Materials on Topic "Computer Architecture for AI".
     - We propose a power-efficient AI-MPU including: 1) a flexible (N:M) pruning rate control technology capable of up to 16x AI performance acceleration, and 2) a heterogenous architecture for multi-task & real-time robot operation based on the co-operation among a dynamically reconfigurable processor (DRP), AI accelerator (DRP-AI) and embedded CPU.
     - We developed a flexible N:M pruning method that can greatly relax pruning position constraints from structured pruning, while maintaining the ability to process weights in parallel computing units.
     - For CNN processing, computationally dominant convolution layers and common layers are handled by the MAC. By using the DRP, the inference speed, including pre- and post- processing, is 6.5x faster than using the embedded CPU.
+- C-Transformer: A 2.6-18.1uJ/Token Homogeneous DNN-Transformer/Spiking-Transformer Processor with Big-Little network and Implicit Weight Generation for Large Language Models. (KAIST)
+  - Direction: Hardware (Research) for Power-Efficient and Low Latency
+  - Keywords: Big-Little Network, Implicit Weight Generation, Transformer
+  - Takeaways:
+    - Three solutions for large External Memory Access (EMA) overhead of LLM: 1) big-little network; 2) implicit weight generation; 3) extended sign compression.
+- NVE: A 3nm 23.2TOPS/W 12b-Digital-CIM-Based Neural Engine for High-Resolution Visual-Quality Enhancement on Smart Devices. (MediaTek & TSMC)
+  - Direction: Hardware (Industrial Product) for Energy-Efficient
+  - Keywords: Super-Resolution, Noise-Reduction, Digital In-Memory Computing, Fusion
+  - Takeaways:
+    - Neural Visual Enhancement Engine (NVE) has 3 features: 1) a weight-reload-free Digital-Compute-In-Memory (DCIM) engine with reduced weight switching rate to enhance the computational power efficiency; 2) a Convolutional Element (CE) fusion establishes a workload-balanced pipeline architecture, reducing external memory access and power consumption; 3) an adaptive data control and striping optimization mechanism supports stride convolution and transposed convolution in DCIM with improved utilization, and an optimized execution flow for efficient data traversal.
+
 
 # Transaction
 
