@@ -55,7 +55,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - What **questions** are you left with?
   
 # Conference
-### 2024 ISSCC
+### 202402 ISSCC
 - ATOMUS: A 5nm 32TFLOPS/128TOPS ML System-on-Chip for Latency Critical Applications. (Rebellions)
   - Direction: Low-Latency Chip
   - Keywords: Multi-Level Synchronization, Latency-Centric Memory
@@ -83,7 +83,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
     - Metis leverages the benefits from a quantized digitial in-memory computing (D-IMC) architecture - with 8b weights, 8b activations, and full-precision accumulation - to descrease both the memory cost of weights and activations and the energy consumption of matrix-vector multiplications (MVM), without comprising the neural network accuracy.
     - The primary component of the Metis AIPU is the AI Core, comprising the D-IMC for MVM operations, a data processing unit (DPU) for element-wise vector operations and activations, a depth-wise processing unit (DWPU) for depth-wise convolution, pooling, and up-sampling, a local 4MiB L1 SRAM, and a RISC-V control core.
     - The performance of the AIPU is a result of a vast digital in-memory compute array, signficantly larger than previous designs, coupled with gating techniques ensuring top-tier energy efficiency even in low utilization.
-- **A 23.9TOPS/W @ 0.8V, 130TOPS AI Accelerator with 16x Performance-Accelerable Pruning in 14nm Heterogeneous Embedded MPU for Real-Time Robot Applications**. (Renesas Electronics)
+- A 23.9TOPS/W @ 0.8V, 130TOPS AI Accelerator with 16x Performance-Accelerable Pruning in 14nm Heterogeneous Embedded MPU for Real-Time Robot Applications. (Renesas Electronics)
   - Direction: Power-Efficient Chip
   - Keywords: Pruning, Dynamically Reconfigurable Processor, Robot
   - Takeaways:
@@ -112,6 +112,24 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - Takeaways:
     - This work leverages the unique characteristic of AI workloads, which allows predictive compile-time software optimization and proposes a new power management architecture to minimize worst-case margins and realize the potential of AI accelerators.
     - A new software-assisted feed-forward current-limiting scheme is proposed in conjunction with PCIe-card-level closed-loop control to maximize performance under sub-ms peak current constraints.
+
+### 202404 ASPLOS
+- 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
+  - Direction: Efficient LLM Inference
+  - Keywords: Quantization, Fine-Tuning, Softmax
+  - Takeaways:
+    - This paper is the first to systematically explore quantization of all Transformer operations beyond GEMM via FP8 and Posit8.
+    - An area- and power-efficient posit softmax is designed to compensate for the larger posit MAC unit.
+    - Operaton fusion is employed to reduce the post-training quantization accuracy loss, simultaneously enhancing the fine-tuning accuracy.
+- Carat: Unlocking Value-Level Parallelism for Multiplier-Free GEMMs. (University of Wisconsin-Madison)
+  - Direction: Efficient LLM Inference
+  - Keywords: Value Reuse, GEMM
+  - Takeaways:
+    - Value-Level Parallism: unique products are computed only once, and different input subscribe to (select) their products via temporal coding.
+- Atalanta: A Bit is Worth a "Thousand" Tensor Values. (University of Toronto)
+  - Keywords: Lossloss Tensor Compression
+  - Takeaways:
+    - Atalanta is a practical and lossless tensor compression method. It enables transparent and highly-efficient encoding for weights and activations, it is low-cost and can be seamlessly integrated with SoTA deep learning accelerators.
 
 
 # Transaction
