@@ -59,7 +59,27 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - What **questions** are you left with?
   
 # Conference
-### 202402 ISSCC
+
+### 2024 ASPLOS
+- 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
+  - Direction: Efficient LLM Inference
+  - Keywords: Quantization, Fine-Tuning, Softmax
+  - Takeaways:
+    - This paper is the first to systematically explore quantization of all Transformer operations beyond GEMM via FP8 and Posit8.
+    - An area- and power-efficient posit softmax is designed to compensate for the larger posit MAC unit.
+    - Operaton fusion is employed to reduce the post-training quantization accuracy loss, simultaneously enhancing the fine-tuning accuracy.
+- Carat: Unlocking Value-Level Parallelism for Multiplier-Free GEMMs. (University of Wisconsin-Madison)
+  - Direction: Efficient LLM Inference
+  - Keywords: Value Reuse, GEMM
+  - Takeaways:
+    - Value-Level Parallism: unique products are computed only once, and different input subscribe to (select) their products via temporal coding.
+- Atalanta: A Bit is Worth a "Thousand" Tensor Values. (University of Toronto)
+  - Keywords: Lossloss Tensor Compression
+  - Takeaways:
+    - Atalanta is a practical and lossless tensor compression method. It enables transparent and highly-efficient encoding for weights and activations, it is low-cost and can be seamlessly integrated with SoTA deep learning accelerators.
+
+
+### 2024 ISSCC
 - ATOMUS: A 5nm 32TFLOPS/128TOPS ML System-on-Chip for Latency Critical Applications. (Rebellions)
   - Direction: Low-Latency Chip
   - Keywords: Multi-Level Synchronization, Latency-Centric Memory
@@ -117,24 +137,14 @@ Awesome Materials on Topic "Computer Architecture for AI".
     - This work leverages the unique characteristic of AI workloads, which allows predictive compile-time software optimization and proposes a new power management architecture to minimize worst-case margins and realize the potential of AI accelerators.
     - A new software-assisted feed-forward current-limiting scheme is proposed in conjunction with PCIe-card-level closed-loop control to maximize performance under sub-ms peak current constraints.
 
-### 202404 ASPLOS
-- 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
-  - Direction: Efficient LLM Inference
-  - Keywords: Quantization, Fine-Tuning, Softmax
-  - Takeaways:
-    - This paper is the first to systematically explore quantization of all Transformer operations beyond GEMM via FP8 and Posit8.
-    - An area- and power-efficient posit softmax is designed to compensate for the larger posit MAC unit.
-    - Operaton fusion is employed to reduce the post-training quantization accuracy loss, simultaneously enhancing the fine-tuning accuracy.
-- Carat: Unlocking Value-Level Parallelism for Multiplier-Free GEMMs. (University of Wisconsin-Madison)
-  - Direction: Efficient LLM Inference
-  - Keywords: Value Reuse, GEMM
-  - Takeaways:
-    - Value-Level Parallism: unique products are computed only once, and different input subscribe to (select) their products via temporal coding.
-- Atalanta: A Bit is Worth a "Thousand" Tensor Values. (University of Toronto)
-  - Keywords: Lossloss Tensor Compression
-  - Takeaways:
-    - Atalanta is a practical and lossless tensor compression method. It enables transparent and highly-efficient encoding for weights and activations, it is low-cost and can be seamlessly integrated with SoTA deep learning accelerators.
-
 
 # Transaction
-
+### 2017 JSSC
+- Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks. (MIT)
+  - Direction: Energy-Efficent Chip
+  - Keywords: Row-Stationary Dataflow, Run Length Encoding, Data Gating
+  - Takeaways:
+    - A spatial architecture using an array of 168 processing elements (PEs) that creates a four-level memory hierarchy.
+    - The row-stationary dataflow minimizes data movement for all data types (ifmap, filter, and psums/ofmap) simultaneously.
+    - A network-on-chip (NoC) architecture that uses both multicast and point-to-point single-cycle data delivery to support the RS dataflow.
+    - Run-length compression (RLC) and PE data gating that exploit the statistics of zero data in CNNs to further improve energy efficiency.
