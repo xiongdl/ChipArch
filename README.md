@@ -16,6 +16,10 @@ Awesome Materials on Topic "Computer Architecture for AI".
 # Tutorial
 - 2019 ISCA - Hardware Architectures for Deep Neural Networks. (MIT, NVIDIA)
   - Website: http://eyeriss.mit.edu/tutorial.html
+- 2020 ISPASS - Timeloop/Accelergy Tutorial: Tools for Evaluating Deep Neural Network Accelerator Designs. (MIT, NVIDIA)
+  - Website: https://accelergy.mit.edu/tutorial.html
+- 2021 ISCA - Sparse Tensor Accelerators: Abstraction and Modeling. (MIT, NVIDIA)
+  - Website: https://accelergy.mit.edu/sparse_tutorial.html
 
 # Insight
 - 2024 ISSCC - Semiconductor Industry: Present & Future. (TSMC)
