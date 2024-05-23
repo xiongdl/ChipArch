@@ -77,7 +77,11 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - Keywords: Lossloss Tensor Compression
   - Takeaways:
     - Atalanta is a practical and lossless tensor compression method. It enables transparent and highly-efficient encoding for weights and activations, it is low-cost and can be seamlessly integrated with SoTA deep learning accelerators.
-
+- **SpecInfer: Accelerating Large Language Model Serving with Tree-Based Speculative Inference and Verification**. (CMU)
+  - Direction: Efficient LLM Serving
+  - Keywords: Speculative Inference
+  - Takeaways:
+    - A key insight behind SpecInfer is to simultaneously consider a diversity of speculation candidates to efficiently predict the LLM's outputs, which are organized as a token tree and verified against the LLM in parallel using a tree-based parallel decoding mechanism. 
 
 ### 2024 ISSCC
 - ATOMUS: A 5nm 32TFLOPS/128TOPS ML System-on-Chip for Latency Critical Applications. (Rebellions)
