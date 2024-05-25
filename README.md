@@ -72,6 +72,16 @@ Awesome Materials on Topic "Computer Architecture for AI".
   
 # Paper List
 ## 2024 ASPLOS
+### AttAcc! Unleashing the Power of PIM for Batched Transformer-based Generative Model Inference. (Seoul National University) <a name="attacc@2024_asplos"></a>
+- Direction: Efficient LLM Inference
+- Keywords: In Memory Computing
+- Takeaways:
+  - Identify the growing importance of the attention layer in the trend with increasing model sizes and sequence length.
+  - The conventional serving platforms, such as GPUs, are suboptimal for large batch sizes having stringent memory capacity and bandwidth requirements in processing the attention layer under a tight service-level objective (SLO).
+  - AttAcc: a DRAM-based processing-in-memory (PIM) architecture to accelerate memory-bound attention layers; increase the maximum batch size under the SLO constraint.
+  - A heterogeneous system architecture: strategically processes the memory-bound attention layers with AttAcc, while efficiently handling compute-bound batched FC layers with xPUs.
+
+
 ### 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
 - Direction: Efficient LLM Inference
 - Keywords: Quantization, Fine-Tuning, Softmax
