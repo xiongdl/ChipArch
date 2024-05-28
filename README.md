@@ -30,6 +30,8 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - Website: http://eyeriss.mit.edu/tutorial.html
 - 2020 ISPASS - Timeloop/Accelergy Tutorial: Tools for Evaluating Deep Neural Network Accelerator Designs. (MIT, NVIDIA)
   - Website: https://accelergy.mit.edu/tutorial.html
+- 2020 MICRO - MAESTRO Tutorial
+  - Website: https://maestro.ece.gatech.edu/docs/build/html/tutorials.html
 - 2021 ISCA - Sparse Tensor Accelerators: Abstraction and Modeling. (MIT, NVIDIA)
   - Website: https://accelergy.mit.edu/sparse_tutorial.html
 
