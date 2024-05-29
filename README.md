@@ -5,9 +5,12 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - [Book](#book)
 - [Course](#course)
 - [Tutorial](#tutorial)
-- [Insight](#insight)
 - [Survey](#survey)
 - [How to Read a Paper?](#how-to-read-a-paper)
+- [Direction](#direction)
+  - [Analytical Framework](#analytical-framework)
+  - [LLM Accelerator](#llm-accelerator)
+  - [CNN Accelerator](#cnn-accelerator)
 - [Paper List](#paper-list)
   - 2024: [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc)
   - 2017: [JSSC](#2017-jssc)
@@ -34,19 +37,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - Website: https://maestro.ece.gatech.edu/docs/build/html/tutorials.html
 - 2021 ISCA - Sparse Tensor Accelerators: Abstraction and Modeling. (MIT, NVIDIA)
   - Website: https://accelergy.mit.edu/sparse_tutorial.html
-
-# Insight
-- 2024 ISSCC - Semiconductor Industry: Present & Future. (TSMC)
-  - Takeaways:
-    - Continued advanced technology scaling: new device architecture (CFET), low dimensional channel materials.
-    - Essential design-technology co-optimization (DTCO): extract maximum values by tailoring technology definition (standard logic cell, SRAM, etc).
-    - Essential system-technology co-optimization (STCO): logic integration (2.5D + 3D integration), memory bandwidth (memory + logic), specially for power delivery (voltage regulator integration), specially for interconnect speed (OE on substrate).
-- 2024 ISSCC - Computing in the Era of Generative AI. (NVIDIA)
-  - Takeaways:
-    - Being an early adopter is hard and uncomfortable but I encourge you to believe it can pay off.
-    - The most important lesson is not expect immediate miracles. You have to be persistent, especially if you're trying a new era.
-    - Instead, believe that AI will fundamentally transform the semiconductor industry and your business.
-  
+ 
 
 # Survey
 - Commercial AI Accelerators Survey from MIT Lincoln Laboratory Supercomputing Center.
@@ -71,6 +62,15 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - What is your **analysis** of the identified problem, idea and evaluation?
   - What are **future directions** for this research?
   - What **questions** are you left with?
+
+# Direction
+## Analytical Framework
+
+## LLM Accelerator
+
+## CNN Accelerator
+
+
   
 # Paper List
 ## 2024 ASPLOS
@@ -110,6 +110,12 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - A key insight behind SpecInfer is to simultaneously consider a diversity of speculation candidates to efficiently predict the LLM's outputs, which are organized as a token tree and verified against the LLM in parallel using a tree-based parallel decoding mechanism. 
 
 ## 2024 ISSCC
+### Forum: Eenergy-Efficient AI-Computing Systems for Large-Language Models.
+- LLM Training and Inference on GPU and HPC Systems.
+- LLM Energy Problem.
+- Quantizing LLMs for Efficient Inference at the Edge.
+- Next-Generation Mobile Processors with Large-Lanuage Models and Large Multimodal Models.
+
 ### ATOMUS: A 5nm 32TFLOPS/128TOPS ML System-on-Chip for Latency Critical Applications. (Rebellions)
 - Direction: Low-Latency Chip
 - Keywords: Multi-Level Synchronization, Latency-Centric Memory
