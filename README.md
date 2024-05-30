@@ -11,6 +11,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - [Analytical Framework](#analytical-framework)
   - [LLM Accelerator](#llm-accelerator)
   - [CNN Accelerator](#cnn-accelerator)
+  - [In-Memory Computing](#in-memory-computing)
 - [Paper List](#paper-list)
   - 2024: [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc)
   - 2017: [JSSC](#2017-jssc)
@@ -27,6 +28,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
 # Course
 - 2024 Spring - Hardware for Machine Learning. (Berkeley EE290-2)
   - Website: https://inst.eecs.berkeley.edu/~ee290-2/sp24/
+- 2024 ISSCC Short Course - Machine Learning Hardware: Considerations and Accelerator Approaches.
 
 # Tutorial
 - 2019 ISCA - Hardware Architectures for Deep Neural Networks. (MIT, NVIDIA)
@@ -69,6 +71,8 @@ Awesome Materials on Topic "Computer Architecture for AI".
 ## LLM Accelerator
 
 ## CNN Accelerator
+
+## In-Memory Computing
 
 
   
