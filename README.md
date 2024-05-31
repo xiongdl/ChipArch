@@ -12,8 +12,11 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - [LLM Accelerator](#llm-accelerator)
   - [CNN Accelerator](#cnn-accelerator)
   - [In-Memory Computing](#in-memory-computing)
+  - [Quantization](#quantization)
 - [Paper List](#paper-list)
   - 2024: [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc)
+  - 2023:
+  - 2022: [Others](2022-others)
   - 2017: [JSSC](#2017-jssc)
   - 2016: [ISCA](#2016-isca), [ISSCC](#2016-isscc)
 
@@ -73,6 +76,11 @@ Awesome Materials on Topic "Computer Architecture for AI".
 ## CNN Accelerator
 
 ## In-Memory Computing
+
+
+## Quantization
+- [2022 arXiv - FP8 Formats for Deep Learning](#fp8@2022_arxiv)
+- [2022 NeurIPS - FP8 Quantization: The Power of the Exponent](#fp8@2022_neurips)
 
 
   
@@ -195,6 +203,22 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - A network-on-chip (NoC) architecture that uses both multicast and point-to-point single-cycle data delivery to support the RS dataflow.
   - Run-length compression (RLC) and PE data gating that exploit the statistics of zero data in CNNs to further improve energy efficiency.
   - Even though the 168 PEs are identical and run under the same core clock, their processing states do no need to proceed in lock steps, i.e., not as a systolic array. Each PE can start its own processing as soon as any fmaps or psums arrives.
+
+## 2022 Others
+### FP8 Quantization: The Power of the Exponent. (Qualcomm) <a name="fp8@2022_neurips"></a>
+- Analytically the FP8 format can improve on the INT8 format for Gaussian distributions that are common in neural networks, and that higher exponent bits work well when outliers occur.
+- The proposed FP8 quantization simulation can learn the bias and mantissa-exponent bit-width trade-off.
+- In post-training quantization setting, generally for neural networks the 5M2E and 4M3E FP8 format works the best, and that for networks with more outliers like transformers increasing the number of exponent bits works best.
+- When doing quantization-aware training, many of these benefits of the format disappear, as the network learns to perform well for the INT8 quantization grid as well.
+
+### FP8 Formats for Deep Learning. (NVIDIA & Arm & Intel) <a name="fp8@2022_arxiv"></a>
+- FP8 consists of two encodings: E4M3 (4-bit exponent and 3-bit mantissa) and E5M2 (5-bit exponent and 2-bit mantissa).
+- The recommended use of FP8 encodings is E4M3 for weight and activation tensors, and E5M2 for gradient tensors.
+- E5M2 follows the IEEE 754 conventions and can be viewed as IEEE half precision with fewer mantissa bits. While E4M3 extends dynamic range by reclaiming most of the bit patterns used for special values.
+- Inputs to GEMMs (activation, weight, activation gradient tensors) are clipped to FP8-representable values, including the first convolution and the last fully-connected layer. Output tensors were left in higher precision as they are typically consumed by non-GEMM operations, such as a non-linearities or normalizations, and in a number of cases get fused with the preceding GEMM operation.
+- For FP16-trained models quantized to either int8 or E4M3 for inference, both quantizations use per-channel scaling factors for weights, per-tensor scaling factors for activations, as is common for int8 fixed-point.
+
+
 
 ## 2016 ISCA
 ### Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Networks. (MIT) <a name="eyeriss@2016_isca"></a>
