@@ -14,9 +14,10 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - [In-Memory Computing](#in-memory-computing)
   - [Quantization](#quantization)
 - [Paper List](#paper-list)
-  - 2024: [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc)
-  - 2023:
-  - 2022: [Others](2022-others)
+  - 2024: [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc), [Others](#2024-others)
+  - 2023: [Others](#2023-others)
+  - 2022: [Others](#2022-others)
+  - 2019: [Others](#2019-others)
   - 2017: [JSSC](#2017-jssc)
   - 2016: [ISCA](#2016-isca), [ISSCC](#2016-isscc)
 
@@ -79,8 +80,15 @@ Awesome Materials on Topic "Computer Architecture for AI".
 
 
 ## Quantization
+### FP8
+PTQ only; Simplify deployment by using same dataypes for training and inference (without calibration or fine-tuning).
+- [2024 MLSys - Efficient Post-Training Quantization with FP8 Formats](#fp8@2024_mlsys)
+- [2023 arXiv - FP8 versus INT8 for Efficient Deep Learning Inference](#fp8@2023_arxiv)
 - [2022 arXiv - FP8 Formats for Deep Learning](#fp8@2022_arxiv)
 - [2022 NeurIPS - FP8 Quantization: The Power of the Exponent](#fp8@2022_neurips)
+- [2019 NeurIPS - Hybrid 8-bit Floating Point Training and Inference for Deep Neural Networks](#hfp8@2019_neurips)
+### INT8
+
 
 
   
@@ -193,6 +201,45 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - This work leverages the unique characteristic of AI workloads, which allows predictive compile-time software optimization and proposes a new power management architecture to minimize worst-case margins and realize the potential of AI accelerators.
   - A new software-assisted feed-forward current-limiting scheme is proposed in conjunction with PCIe-card-level closed-loop control to maximize performance under sub-ms peak current constraints.
 
+## 2024 Others
+### Efficient Post-Training Quantization with FP8 Formats. (Intel; MLSys) <a name="fp8@2024_mlsys"></a>
+- We recommend using per-channel scaling for weights across all networks.
+- We found per-tensor scaling to be adequate for handling outliers using FP8 formats.
+- The weight distrubtions in CV and NLP workloads tend to follow normal distribution with losts value near zero.
+- We balance this tradeoff by assigning E5M2 or E4M3 format for range-bound tensors and E3M4 for precision-bound tensors.
+- Our experiments show that using E4M3 for activations and E3M4 for weights produced best accuracy results on a range of NLP workloads.
+
+## 2023 Others
+### FP8 versus INT8 for Efficient Deep Learning. (Qualcomm; arXiv) <a name="fp8@2023_arxiv"></a>
+- Depending on the accumulator size, the FP8 MAC units are 50% to 180% less efficient than their INT8 counterparts.
+- If you want the best accuracy and efficiency trade-off for you models, quantizing them to INT4-INT8-INT16 is the best solution.
+  - The INT16 format is the most accurate; it is even more accurate than FP16 for representing FP32 values. If you do not care much about efficiency and just want to deploy without having to take care quantization, the INT16 format is you best bet.
+  - With a low amount of effort, by using PTQ techniques, you can frequency get your networks in full INT8. For some neteworks, some layers might need more accuracy, in which case W8A16 layers almost always solve the issue.
+  - If you want to really optimize your networks, going with quantization-aware training can get you networks into the 4-bit weight and 8-bit activation regime. This is very achievable for a wide range of networks, especially for weight-bounded networks like LLMs today.
+
+
+
+## 2022 Others
+### FP8 Quantization: The Power of the Exponent. (Qualcomm; NeurIPS) <a name="fp8@2022_neurips"></a>
+- Analytically the FP8 format can improve on the INT8 format for Gaussian distributions that are common in neural networks, and that higher exponent bits work well when outliers occur.
+- The proposed FP8 quantization simulation can learn the bias and mantissa-exponent bit-width trade-off.
+- In post-training quantization setting, generally for neural networks the 5M2E and 4M3E FP8 format works the best, and that for networks with more outliers like transformers increasing the number of exponent bits works best.
+- When doing quantization-aware training, many of these benefits of the format disappear, as the network learns to perform well for the INT8 quantization grid as well.
+
+### FP8 Formats for Deep Learning. (NVIDIA & Arm & Intel; arXiv) <a name="fp8@2022_arxiv"></a>
+- FP8 consists of two encodings: E4M3 (4-bit exponent and 3-bit mantissa) and E5M2 (5-bit exponent and 2-bit mantissa).
+- The recommended use of FP8 encodings is E4M3 for weight and activation tensors, and E5M2 for gradient tensors.
+- E5M2 follows the IEEE 754 conventions and can be viewed as IEEE half precision with fewer mantissa bits. While E4M3 extends dynamic range by reclaiming most of the bit patterns used for special values.
+- Inputs to GEMMs (activation, weight, activation gradient tensors) are clipped to FP8-representable values, including the first convolution and the last fully-connected layer. Output tensors were left in higher precision as they are typically consumed by non-GEMM operations, such as a non-linearities or normalizations, and in a number of cases get fused with the preceding GEMM operation.
+- For FP16-trained models quantized to either int8 or E4M3 for inference, both quantizations use per-channel scaling factors for weights, per-tensor scaling factors for activations, as is common for int8 fixed-point.
+
+## 2019 Others
+### Hybrid 8-bit Floating Point (HFP8) Training and Inference for Deep Neural Networks. (IBM; NeurIPS) <a name="hfp8@2019_neurips"></a>
+- Hybrid FP8 format for training: E4M3 for forward and E5M2 for backward.
+- By using FP8 E4M3, we can directly quantize a pre-trained model down to 8-bits without losing accuracy by simply fine-tuning batch normalization statistics.
+- If the quantization step is performed after the max substraction step in SoftMax, this degradation in accuracy can be fully eliminated.
+
+
 ## 2017 JSSC
 ### Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks. (MIT) <a name="eyeriss@2017_jssc"></a>
 - Direction: Energy-Efficent Chip
@@ -203,22 +250,6 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - A network-on-chip (NoC) architecture that uses both multicast and point-to-point single-cycle data delivery to support the RS dataflow.
   - Run-length compression (RLC) and PE data gating that exploit the statistics of zero data in CNNs to further improve energy efficiency.
   - Even though the 168 PEs are identical and run under the same core clock, their processing states do no need to proceed in lock steps, i.e., not as a systolic array. Each PE can start its own processing as soon as any fmaps or psums arrives.
-
-## 2022 Others
-### FP8 Quantization: The Power of the Exponent. (Qualcomm) <a name="fp8@2022_neurips"></a>
-- Analytically the FP8 format can improve on the INT8 format for Gaussian distributions that are common in neural networks, and that higher exponent bits work well when outliers occur.
-- The proposed FP8 quantization simulation can learn the bias and mantissa-exponent bit-width trade-off.
-- In post-training quantization setting, generally for neural networks the 5M2E and 4M3E FP8 format works the best, and that for networks with more outliers like transformers increasing the number of exponent bits works best.
-- When doing quantization-aware training, many of these benefits of the format disappear, as the network learns to perform well for the INT8 quantization grid as well.
-
-### FP8 Formats for Deep Learning. (NVIDIA & Arm & Intel) <a name="fp8@2022_arxiv"></a>
-- FP8 consists of two encodings: E4M3 (4-bit exponent and 3-bit mantissa) and E5M2 (5-bit exponent and 2-bit mantissa).
-- The recommended use of FP8 encodings is E4M3 for weight and activation tensors, and E5M2 for gradient tensors.
-- E5M2 follows the IEEE 754 conventions and can be viewed as IEEE half precision with fewer mantissa bits. While E4M3 extends dynamic range by reclaiming most of the bit patterns used for special values.
-- Inputs to GEMMs (activation, weight, activation gradient tensors) are clipped to FP8-representable values, including the first convolution and the last fully-connected layer. Output tensors were left in higher precision as they are typically consumed by non-GEMM operations, such as a non-linearities or normalizations, and in a number of cases get fused with the preceding GEMM operation.
-- For FP16-trained models quantized to either int8 or E4M3 for inference, both quantizations use per-channel scaling factors for weights, per-tensor scaling factors for activations, as is common for int8 fixed-point.
-
-
 
 ## 2016 ISCA
 ### Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Networks. (MIT) <a name="eyeriss@2016_isca"></a>
