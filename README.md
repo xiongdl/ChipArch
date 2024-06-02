@@ -9,8 +9,10 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - [How to Read a Paper?](#how-to-read-a-paper)
 - [Direction](#direction)
   - [Analytical Framework](#analytical-framework)
+  - [Cycle-Accurate Simulator](#cycle-accurate-simulator)
   - [LLM Accelerator](#llm-accelerator)
   - [CNN Accelerator](#cnn-accelerator)
+  - [TinyML](#tinyml)
   - [In-Memory Computing](#in-memory-computing)
   - [Quantization](#quantization)
 - [Paper List](#paper-list)
@@ -35,15 +37,16 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - 2024 ISSCC Short Course - Machine Learning Hardware: Considerations and Accelerator Approaches.
 
 # Tutorial
-- 2019 ISCA - Hardware Architectures for Deep Neural Networks. (MIT, NVIDIA)
-  - Website: http://eyeriss.mit.edu/tutorial.html
+- 2023 MICRO - GeneSys
+  - Website: https://actlab-genesys.github.io/home/micro_2023 
+- 2021 ISCA - Sparse Tensor Accelerators: Abstraction and Modeling. (MIT, NVIDIA)
+  - Website: https://accelergy.mit.edu/sparse_tutorial.html
 - 2020 ISPASS - Timeloop/Accelergy Tutorial: Tools for Evaluating Deep Neural Network Accelerator Designs. (MIT, NVIDIA)
   - Website: https://accelergy.mit.edu/tutorial.html
 - 2020 MICRO - MAESTRO Tutorial
-  - Website: https://maestro.ece.gatech.edu/docs/build/html/tutorials.html
-- 2021 ISCA - Sparse Tensor Accelerators: Abstraction and Modeling. (MIT, NVIDIA)
-  - Website: https://accelergy.mit.edu/sparse_tutorial.html
- 
+  - Website: https://maestro.ece.gatech.edu/docs/build/html/tutorials.html 
+- 2019 ISCA - Hardware Architectures for Deep Neural Networks. (MIT, NVIDIA)
+  - Website: http://eyeriss.mit.edu/tutorial.html
 
 # Survey
 - Commercial AI Accelerators Survey from MIT Lincoln Laboratory Supercomputing Center.
@@ -72,11 +75,20 @@ Awesome Materials on Topic "Computer Architecture for AI".
 # Direction
 ## Analytical Framework
 
+## Cycle-Accurate Simulator
+- ONNXim: a fast cycle-level simulator that can model multi-core NPUs for DNN inference
+  - Website: https://github.com/PSAL-POSTECH/ONNXim 
+
 ## LLM Accelerator
 
 ## CNN Accelerator
 
 ## In-Memory Computing
+
+
+## TinyML
+- [2024 ASPLOS - MicroVSA](#microvsa@2024_asplos)
+- [2024 ASPLOS - TinyForge](#tinyforge@2024_asplos)
 
 
 ## Quantization
@@ -88,6 +100,8 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 - [2022 NeurIPS - FP8 Quantization: The Power of the Exponent](#fp8@2022_neurips)
 - [2019 NeurIPS - Hybrid 8-bit Floating Point Training and Inference for Deep Neural Networks](#hfp8@2019_neurips)
 ### INT8
+
+
 
 
 
@@ -128,6 +142,20 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 - Keywords: Speculative Inference
 - Takeaways:
   - A key insight behind SpecInfer is to simultaneously consider a diversity of speculation candidates to efficiently predict the LLM's outputs, which are organized as a token tree and verified against the LLM in parallel using a tree-based parallel decoding mechanism. 
+
+### NeuPIMs: NPU-PIM Heterogeneous Acceleration for Batched LLM Inferencing. (KAIST & POSTECH & GeTech) <a name="neupims@2024_asplos"></a>
+- In batched processing, QKV generation and feed-forward networks involve compute-intensive GEMM, while multi-head attention requires bandwidth-heavy GEMV.
+- NeuPIMs is a heterogeneous acceleration system that jointly exploits a conventional GEMM-focused NPU and GEMV-optimized PIM devices.
+- NeuPIMs is equipped with dual row buffers in each bank, facilitating the simulaneous management of memory read/write operations and PIM commands.
+- NeuPIMs employs a runtime sub-batch interleaving technique to maximize concurrent execution, leveraging batch parallelism to allow two independent sub-batches to be pipelined within a single NeuPIMs device.
+
+### SpecPIM: Accelerating Speculative Inference on PIM-Enabled System via Architecture-Dataflow Co-Exploration. (Peking University) <a name="specpim@2024_asplos"></a>
+- SpecPIM constructs the architecture and dataflow design space by comprehensively considering the algorithmic heterogeneity in speculative inference and the architectural heterogeneity between centralized computing and DRAM-PIMs.
+
+### MicroVSA: An Ultra-Lightweight Vector Symboblic Architecture-Based Classifier Libraray for Always-On Inference on Tiny Microcontrollers. (Northeastern University) <a name="microvsa@2024_asplos"></a>
+-
+### TinyForge: A Design Space Exploration to Advance Energy and Silicon Area Trade-offs in tinyML Compute Architectures with Custom Latch Arrays. (Standford University) <a name="tinyforge@2024_asplos"></a>
+- 
 
 ## 2024 ISSCC
 ### Forum: Eenergy-Efficient AI-Computing Systems for Large-Language Models.
