@@ -10,9 +10,9 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - [Direction](#direction)
   - [Analytical Framework](#analytical-framework)
   - [Cycle-Accurate Simulator](#cycle-accurate-simulator)
-  - [LLM Accelerator](#llm-accelerator)
-  - [CNN Accelerator](#cnn-accelerator)
-  - [TinyML](#tinyml)
+  - [DSA for NN](#dsa-for-nn)
+  - [DSA for Robot](#dsa-for-robot)
+  - [Sparse Matrix Multiplication](#sparse-matrix-multiplication)
   - [In-Memory Computing](#in-memory-computing)
   - [Quantization](#quantization)
 - [Paper List](#paper-list)
@@ -79,16 +79,20 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - ONNXim: a fast cycle-level simulator that can model multi-core NPUs for DNN inference
   - Website: https://github.com/PSAL-POSTECH/ONNXim 
 
-## LLM Accelerator
+## DSA for NN
+- [2024 ASPLOS - Tandem Processor (Open-Source RTL)](#tandem@2024_asplos)
+- 
 
-## CNN Accelerator
+## DSA for Robot
+
+
+## Sparse Matrix Multiplication
+- [2024 ASPLOS - ACES](#aces@2024_asplos)
+- [2024 ASPLOS - FEASTA](#feasta@2024_asplos)
+- 
+
 
 ## In-Memory Computing
-
-
-## TinyML
-- [2024 ASPLOS - MicroVSA](#microvsa@2024_asplos)
-- [2024 ASPLOS - TinyForge](#tinyforge@2024_asplos)
 
 
 ## Quantization
@@ -103,11 +107,39 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 
 
 
-
-
   
 # Paper List
 ## 2024 ASPLOS
+### Tandem Processor: Grappling with Emerging Operators in Neural Networks. (KAIST & Google DeepMind & UCSD & Illinois) <a name="tandem@2024_asplos"></a>
+- Non-GEMM operations have increased significantly in number, variety, and the structure of connectivity.
+- Tandem processor is a specialized companion SIMD processor that operations in tandem with the GEMM unit, while striking a balance between customization and programmability.
+- Tandem processor orchestrates the end-to-end execution, eliminating the need for an additional CPU.
+- Open-Source RTL: https://actlab-genesys.github.io
+
+### ACES: Accelerating Sparse Matrix Multiplication with Adaptive Execution Flow and Concurrency-Aware Cache Optimizations. (Illinois & ICT) <a name="aces@2024_asplos"></a>
+- Adaptive execution flow: adjust to varying sparsity patterns of input matrices;
+- Concurrency-aware cache replacement policy to optimize cache management;
+- Incorporating a non-blocking buffer to manage cache miss accesses.
+
+### FEASTA: A Flexible and Efficient Accelerator for Sparse Tensor Algebra in Machine Learing. (Tsinghua University) <a name="feasta@2024_asplos"></a>
+- Three main techniques: a unified modeling for SpTA execution flow, a flexbile SpTA ISA with an efficient parallelization mechanism, and an instruction-driven configurable architecture.
+
+### 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
+- This paper is the first to systematically explore quantization of all Transformer operations beyond GEMM via FP8 and Posit8.
+- An area- and power-efficient posit softmax is designed to compensate for the larger posit MAC unit.
+- Operaton fusion is employed to reduce the post-training quantization accuracy loss, simultaneously enhancing the fine-tuning accuracy.
+
+### Carat: Unlocking Value-Level Parallelism for Multiplier-Free GEMMs. (University of Wisconsin-Madison)
+- Value-Level Parallism: unique products are computed only once, and different input subscribe to (select) their products via temporal coding.
+
+### TAPA-CS: Enabling Scalable Accelerator Design on Distributed HBM-FPGAs. (UCLA) <a name="tapacs@2024_asplos"></a>
+- Integrate two layers of floorplanning (inter- and intra-FPGA) and interconnect pipelining with HLS compilation using an ILP-based resource allocator.
+- Utilize the latency-sensitive nature of the dataflow design to partition it across multiple FPGAs.
+- Open-Source HLS Tool: https://github.com/UCLA-VAST/TAPA-CS
+
+### SpecInfer: Accelerating Large Language Model Serving with Tree-Based Speculative Inference and Verification. (CMU)
+- A key insight behind SpecInfer is to simultaneously consider a diversity of speculation candidates to efficiently predict the LLM's outputs, which are organized as a token tree and verified against the LLM in parallel using a tree-based parallel decoding mechanism.
+  
 ### AttAcc! Unleashing the Power of PIM for Batched Transformer-based Generative Model Inference. (Seoul National University) <a name="attacc@2024_asplos"></a>
 - Direction: Efficient LLM Inference
 - Keywords: In Memory Computing
@@ -117,31 +149,8 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
   - AttAcc: a DRAM-based processing-in-memory (PIM) architecture to accelerate memory-bound attention layers; increase the maximum batch size under the SLO constraint.
   - A heterogeneous system architecture: strategically processes the memory-bound attention layers with AttAcc, while efficiently handling compute-bound batched FC layers with xPUs.
 
-
-### 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
-- Direction: Efficient LLM Inference
-- Keywords: Quantization, Fine-Tuning, Softmax
-- Takeaways:
-  - This paper is the first to systematically explore quantization of all Transformer operations beyond GEMM via FP8 and Posit8.
-  - An area- and power-efficient posit softmax is designed to compensate for the larger posit MAC unit.
-  - Operaton fusion is employed to reduce the post-training quantization accuracy loss, simultaneously enhancing the fine-tuning accuracy.
-
-### Carat: Unlocking Value-Level Parallelism for Multiplier-Free GEMMs. (University of Wisconsin-Madison)
-- Direction: Efficient LLM Inference
-- Keywords: Value Reuse, GEMM
-- Takeaways:
-  - Value-Level Parallism: unique products are computed only once, and different input subscribe to (select) their products via temporal coding.
-
 ### Atalanta: A Bit is Worth a "Thousand" Tensor Values. (University of Toronto)
-- Keywords: Lossloss Tensor Compression
-- Takeaways:
-  - Atalanta is a practical and lossless tensor compression method. It enables transparent and highly-efficient encoding for weights and activations, it is low-cost and can be seamlessly integrated with SoTA deep learning accelerators.
-
-### SpecInfer: Accelerating Large Language Model Serving with Tree-Based Speculative Inference and Verification. (CMU)
-- Direction: Efficient LLM Serving
-- Keywords: Speculative Inference
-- Takeaways:
-  - A key insight behind SpecInfer is to simultaneously consider a diversity of speculation candidates to efficiently predict the LLM's outputs, which are organized as a token tree and verified against the LLM in parallel using a tree-based parallel decoding mechanism. 
+- Atalanta is a practical and lossless tensor compression method. It enables transparent and highly-efficient encoding for weights and activations, it is low-cost and can be seamlessly integrated with SoTA deep learning accelerators.
 
 ### NeuPIMs: NPU-PIM Heterogeneous Acceleration for Batched LLM Inferencing. (KAIST & POSTECH & GeTech) <a name="neupims@2024_asplos"></a>
 - In batched processing, QKV generation and feed-forward networks involve compute-intensive GEMM, while multi-head attention requires bandwidth-heavy GEMV.
@@ -152,10 +161,9 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 ### SpecPIM: Accelerating Speculative Inference on PIM-Enabled System via Architecture-Dataflow Co-Exploration. (Peking University) <a name="specpim@2024_asplos"></a>
 - SpecPIM constructs the architecture and dataflow design space by comprehensively considering the algorithmic heterogeneity in speculative inference and the architectural heterogeneity between centralized computing and DRAM-PIMs.
 
-### MicroVSA: An Ultra-Lightweight Vector Symboblic Architecture-Based Classifier Libraray for Always-On Inference on Tiny Microcontrollers. (Northeastern University) <a name="microvsa@2024_asplos"></a>
--
-### TinyForge: A Design Space Exploration to Advance Energy and Silicon Area Trade-offs in tinyML Compute Architectures with Custom Latch Arrays. (Standford University) <a name="tinyforge@2024_asplos"></a>
-- 
+### Cocco: Hardware-Mapping Co-Exploration towards Memory Capacity-Communication Optimization. (Tsinghua University) <a name="cocco@2024_asplos"></a>
+- This paper proposed a graph-level dataflow with the corresponding memory management scheme that enables flexible graph partitions with high memory utilization.
+
 
 ## 2024 ISSCC
 ### Forum: Eenergy-Efficient AI-Computing Systems for Large-Language Models.
