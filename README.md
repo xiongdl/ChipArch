@@ -81,7 +81,11 @@ Awesome Materials on Topic "Computer Architecture for AI".
 
 ## DSA for NN
 - [2024 ASPLOS - Tandem Processor (Open-Source RTL)](#tandem@2024_asplos)
-- 
+- [2021 DAC - Gemmini (Open-Source RTL)](#gemmini@2021_dac)
+- [VTA (Open-Source RTL)]
+- [2017 JSSC - Eyeriss](@eyeriss@2017_jssc)
+- 2017 NVDIA - NVDLA (Open-Source RTL)
+  - Website: https://nvlda.org/index.html
 
 ## DSA for Robot
 
@@ -98,6 +102,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
 ## Quantization
 ### FP8
 PTQ only; Simplify deployment by using same dataypes for training and inference (without calibration or fine-tuning).
+- [2024 ASPLOS - 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators](#8bit@2024_asplos)
 - [2024 MLSys - Efficient Post-Training Quantization with FP8 Formats](#fp8@2024_mlsys)
 - [2023 arXiv - FP8 versus INT8 for Efficient Deep Learning Inference](#fp8@2023_arxiv)
 - [2022 arXiv - FP8 Formats for Deep Learning](#fp8@2022_arxiv)
@@ -116,18 +121,18 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 - Tandem processor orchestrates the end-to-end execution, eliminating the need for an additional CPU.
 - Open-Source RTL: https://actlab-genesys.github.io
 
+### 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University) <a name="8bit@2024_asplos"></a>
+- PTQ: analyze the accuracy impact of 8-bit quantization on operations beyond GEMM, both FP8 and Posit8 can achieve less than 1% accuracy loss compared to BF16 through operation fusion, even without the need for scaling factors.
+- QAT: adapt low-rank adaptation (LoRA) to fine-tune Transformer via Posit8 and FP8, enabling 8-bit GEMM operations with increased multipy-accumulate efficiency and reduced memory accesses.
+- An area- and power-efficient posit softmax employs bitwise operations to approximate the exponential and reciprocal functions.
+  
 ### ACES: Accelerating Sparse Matrix Multiplication with Adaptive Execution Flow and Concurrency-Aware Cache Optimizations. (Illinois & ICT) <a name="aces@2024_asplos"></a>
-- Adaptive execution flow: adjust to varying sparsity patterns of input matrices;
-- Concurrency-aware cache replacement policy to optimize cache management;
+- Adaptive execution flow: adjust to varying sparsity patterns of input matrices.
+- Concurrency-aware cache replacement policy to optimize cache management.
 - Incorporating a non-blocking buffer to manage cache miss accesses.
 
 ### FEASTA: A Flexible and Efficient Accelerator for Sparse Tensor Algebra in Machine Learing. (Tsinghua University) <a name="feasta@2024_asplos"></a>
 - Three main techniques: a unified modeling for SpTA execution flow, a flexbile SpTA ISA with an efficient parallelization mechanism, and an instruction-driven configurable architecture.
-
-### 8-bit Transformer Inference and Fine-Tuning for Edge Accelerators. (Stanford University)
-- This paper is the first to systematically explore quantization of all Transformer operations beyond GEMM via FP8 and Posit8.
-- An area- and power-efficient posit softmax is designed to compensate for the larger posit MAC unit.
-- Operaton fusion is employed to reduce the post-training quantization accuracy loss, simultaneously enhancing the fine-tuning accuracy.
 
 ### Carat: Unlocking Value-Level Parallelism for Multiplier-Free GEMMs. (University of Wisconsin-Madison)
 - Value-Level Parallism: unique products are computed only once, and different input subscribe to (select) their products via temporal coding.
