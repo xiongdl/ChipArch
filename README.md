@@ -16,7 +16,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - [In-Memory Computing](#in-memory-computing)
   - [Quantization](#quantization)
 - [Paper List](#paper-list)
-  - 2024: [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc), [Others](#2024-others)
+  - 2024: [ISCA](#2024-isca), [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc), [Others](#2024-others)
   - 2023: [Others](#2023-others)
   - 2022: [Others](#2022-others)
   - 2019: [Others](#2019-others)
@@ -114,6 +114,56 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 
   
 # Paper List
+## 2024 ISCA
+### Splitwise: Efficient Generative LLM Inference Using Phase Splitting
+
+### Mind the Gap: Attainable Data Movement and Operational Intensity Bounds for Tensor Algorithms
+
+### A Tale of Two Domains: Exploring Efficient Architecture Design for Truly Autonomous Things
+
+### A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching
+
+### Waferscale Network Switches
+
+### AIO: An Abstraction for Performance Analysis Across Diverse Accelerator Architectures
+
+### FireAxe: Partitoned FPGA-Accelerated Simulation of Large-Scale RTL Designs
+
+### The Dataflow Abstract Machine Simulator Framework
+
+### Tartan: Microarchitecting a Robotic Processor
+
+### Collision Prediction for Robotics Accelerators
+
+### Intel Accelerator Ecosystem: An SoC-Oriented Perspective
+
+### Circular Reconfigurable Parallel Processor for Edge Computing
+
+### Realizing the AMD Exascale Heterogeneous Processor Vision
+
+### TCP: A Tensor Contraction Processor for AI Workloads
+
+### Cambricon-D: Full-Network Differential Acceleration for Diffusion Models
+
+### Trapezoid: A Versatile Accelerator for Dense and Sparse Matrix Multiplications
+
+### Soter: Analytical Tensor-Architecture Modeling and Automatic Tensor Program Tuning for Spatial Accelerators
+
+### ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching
+
+### Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference
+
+### Tender: Accelerating Large Language Models via Tensor Decomposition and Runtime Requantization
+
+### LLMCompass: Enabling Efficient Hardware Design for Large Language Model Inference
+
+### A New Formulation of Neural Data Prefetching
+
+### Triangel: A High-Performance, Accurate, Timely, On-Chip Temporal Prefetcher
+
+### Alternate Path µ-op Cache Prefetching
+
+
 ## 2024 ASPLOS
 ### Tandem Processor: Grappling with Emerging Operators in Neural Networks. (KAIST & Google DeepMind & UCSD & Illinois) <a name="tandem@2024_asplos"></a>
 - Non-GEMM operations have increased significantly in number, variety, and the structure of connectivity.
