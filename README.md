@@ -74,6 +74,8 @@ Awesome Materials on Topic "Computer Architecture for AI".
 
 # Direction
 ## Analytical Framework
+- [2024 ISCA - Orojensis](#orojensis@2024_isca)
+  - Website: https://timeloop.csail.mit.edu/orojenesis
 
 ## Cycle-Accurate Simulator
 - ONNXim: a fast cycle-level simulator that can model multi-core NPUs for DNN inference
@@ -115,9 +117,12 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
   
 # Paper List
 ## 2024 ISCA
+
+### [M0] Mind the Gap: Attainable Data Movement and Operational Intensity Bounds for Tensor Algorithms (NVIDIA) <a name="orojensis@2024_isca"></a>
+- Orojenesis is a methodology that derives the relationship between the capacity of a buffer (i.e., an on-chip scratchpad, cache or buffet) and a lower bound on the accesses to the next-outer level in a memory hierarchy (i.e., a backing store) that no mapping of a given tensor algorithm can improve.
+
 ### Splitwise: Efficient Generative LLM Inference Using Phase Splitting
 
-### Mind the Gap: Attainable Data Movement and Operational Intensity Bounds for Tensor Algorithms
 
 ### A Tale of Two Domains: Exploring Efficient Architecture Design for Truly Autonomous Things
 
