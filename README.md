@@ -17,7 +17,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
   - [Quantization](#quantization)
 - [Paper List](#paper-list)
   - 2024: [ISCA](#2024-isca), [ASPLOS](#2024-asplos), [ISSCC](#2024-isscc), [Others](#2024-others)
-  - 2023: [Others](#2023-others)
+  - 2023: [MICRO](#2023-micro), [Others](#2023-others)
   - 2022: [Others](#2022-others)
   - 2019: [Others](#2019-others)
   - 2017: [JSSC](#2017-jssc)
@@ -81,7 +81,7 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - ONNXim: a fast cycle-level simulator that can model multi-core NPUs for DNN inference
   - Website: https://github.com/PSAL-POSTECH/ONNXim 
 
-## DSA for NN
+## Neural Network
 - [2024 ASPLOS - Tandem Processor (Open-Source RTL)](#tandem@2024_asplos)
 - [2021 DAC - Gemmini (Open-Source RTL)](#gemmini@2021_dac)
 - [VTA (Open-Source RTL)]
@@ -89,13 +89,17 @@ Awesome Materials on Topic "Computer Architecture for AI".
 - 2017 NVDIA - NVDLA (Open-Source RTL)
   - Website: https://nvlda.org/index.html
 
-## DSA for Robot
+## Robot
 
 
-## Sparse Matrix Multiplication
+## Sparse Tensor Accelerator
+### Method
+- [2023 MICRO - TeAAL](#teaal@2023_micro)
+  - Website: https://github.com/FPSG-UIUC/teaal-compiler 
+
+### Design
 - [2024 ASPLOS - ACES](#aces@2024_asplos)
 - [2024 ASPLOS - FEASTA](#feasta@2024_asplos)
-- 
 
 
 ## In-Memory Computing
@@ -304,6 +308,10 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 - The weight distrubtions in CV and NLP workloads tend to follow normal distribution with losts value near zero.
 - We balance this tradeoff by assigning E5M2 or E4M3 format for range-bound tensors and E3M4 for precision-bound tensors.
 - Our experiments show that using E4M3 for activations and E3M4 for weights produced best accuracy results on a range of NLP workloads.
+
+## 2023 MICRO
+### [M0] TeAAL: a Declarative Framework for Modeling Sparse Tensor Accelerators. (University of Illinois, NVIDIA) <a name="teaal@2023_micro"></a>
+- TeAAL is a language and simulator generator for the concise and precise specification and evaluation of sparse tensor algebra accelerators.
 
 ## 2023 Others
 ### FP8 versus INT8 for Efficient Deep Learning. (Qualcomm; arXiv) <a name="fp8@2023_arxiv"></a>
