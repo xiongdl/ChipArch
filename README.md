@@ -1,5 +1,5 @@
-# CA4AI
-Awesome Materials on Topic "Computer Architecture for AI". 
+# ChipArch
+Awesome Materials on Topic "Advanced Chips and Architecture". 
 
 # Table of Contents
 - [Book](#book)
