@@ -8,6 +8,7 @@ Awesome Materials on Topic "Advanced Chips and Architecture".
 - [Survey](#survey)
 - [How to Read a Paper?](#how-to-read-a-paper)
 - [Direction](#direction)
+  - [Sparse Matrix Factorization](#sparse-matrix-factorization) 
   - [Analytical Framework](#analytical-framework)
   - [Cycle-Accurate Simulator](#cycle-accurate-simulator)
   - [DSA for NN](#dsa-for-nn)
@@ -22,6 +23,7 @@ Awesome Materials on Topic "Advanced Chips and Architecture".
   - 2019: [Others](#2019-others)
   - 2017: [JSSC](#2017-jssc)
   - 2016: [ISCA](#2016-isca), [ISSCC](#2016-isscc)
+  - Before 2000: [OldenDays](#oldendays)
 
 # Book
 - 2024 Springer - Towards Heterogeneous Multi-core Systems-on-Chip for Edge Machine Learning.
@@ -73,6 +75,10 @@ Awesome Materials on Topic "Advanced Chips and Architecture".
   - What **questions** are you left with?
 
 # Direction
+## Sparse Matrix Factorization
+### Design
+- [2023 MICRO - Spatula](#spatula@2023_micro)
+
 ## Analytical Framework
 - [2024 ISCA - Orojensis](#orojensis@2024_isca)
   - Website: https://timeloop.csail.mit.edu/orojenesis
@@ -100,6 +106,7 @@ Awesome Materials on Topic "Advanced Chips and Architecture".
 ### Design
 - [2024 ASPLOS - ACES](#aces@2024_asplos)
 - [2024 ASPLOS - FEASTA](#feasta@2024_asplos)
+
 
 
 ## In-Memory Computing
@@ -313,6 +320,9 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 ### [M0] TeAAL: a Declarative Framework for Modeling Sparse Tensor Accelerators. (University of Illinois, NVIDIA) <a name="teaal@2023_micro"></a>
 - TeAAL is a language and simulator generator for the concise and precise specification and evaluation of sparse tensor algebra accelerators.
 
+### [D0] Spatula: A Hardware Accelerator for Sparse Matrix Factorization. (MIT) <a name="spatula@2023_micro"></a>
+- First hardware architecture that achieves high performance on sparse matrix factorization (Cholesky and LU).
+
 ## 2023 Others
 ### FP8 versus INT8 for Efficient Deep Learning. (Qualcomm; arXiv) <a name="fp8@2023_arxiv"></a>
 - Depending on the accumulator size, the FP8 MAC units are 50% to 180% less efficient than their INT8 counterparts.
@@ -371,3 +381,11 @@ PTQ only; Simplify deployment by using same dataypes for training and inference 
 ### Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks. (MIT) <a name="eyeriss@2016_isscc"></a>
 - See [Eyeriss @ 2017 JSCC](#eyeriss@2017_jssc)
 
+
+## OldenDays
+
+### 1982 TechReport - Computing The Cholesky Factorization using a Systolic Architecture.
+- Systolic architecture for Cholesky Factorization ($LL^t$) and $LDL^t$.
+
+### 1978 TechReport - Systolic Arrays for VLSI.
+- Systolic architecture for Matrix-Vector Multiplication, Matrix Multiplication, LU-Decomposition, and Triangler Solve.
